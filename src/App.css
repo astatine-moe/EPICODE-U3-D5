@@ -1,9 +1,19 @@
 :root {
-    --home-bg-color: #000;
+    --home-bg-color: #141414;
     --account-bg-color: #f3f3f3;
     --text-color: #fff;
     --primary-color: #e40a13;
     --secondary-color: #929292;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+#root {
+    height: 100%;
 }
 
 body {
@@ -142,4 +152,29 @@ footer .nav-link:hover {
 .movie-row img {
     width: 100%;
     object-fit: cover;
+}
+
+.profiles {
+    display: flex;
+    width: 100%;
+}
+.profiles .profile {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 3em;
+}
+.profiles .profile:hover {
+    color: white;
+}
+.profiles .profile:hover img {
+    outline: white solid 2px;
+}
+.profiles .profile:last-child {
+    margin-right: 0;
+}
+.profiles .profile img {
+    aspect-ratio: 1/1;
+    height: 200px;
+    border-radius: 0.5em;
+    margin-bottom: 0.5em;
 }

@@ -25,13 +25,18 @@ class Header extends React.Component {
                             </Nav>
                             <Nav>
                                 <NavDropdown
-                                    title="Profile"
+                                    title={this.props.profile.name}
                                     id="collasible-nav-dropdown"
                                 >
                                     <NavDropdown.Item href="#action/3.1">
-                                        Morgan
+                                        Profile
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">
+                                    <NavDropdown.Item
+                                        href="#action/3.2"
+                                        onClick={(e) => {
+                                            this.props.func(null, null);
+                                        }}
+                                    >
                                         Manage Profiles
                                     </NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.3">
