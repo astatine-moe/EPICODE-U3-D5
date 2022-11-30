@@ -1,6 +1,8 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar, NavDropdown, Nav, Container } from "react-bootstrap";
 import logo from "../netflix_logo.png";
+import { LinkContainer } from "react-router-bootstrap";
 
 class Header extends React.Component {
     render() {
@@ -14,14 +16,12 @@ class Header extends React.Component {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="#">Home</Nav.Link>
-                                <Nav.Link href="#">Series</Nav.Link>
-                                <Nav.Link href="#">Films</Nav.Link>
-                                <Nav.Link href="#">New & Popular</Nav.Link>
-                                <Nav.Link href="#">My List</Nav.Link>
-                                <Nav.Link href="#">
-                                    Browse by Languages
-                                </Nav.Link>
+                                <LinkContainer to="/">
+                                    <Nav.Link href="#">Home</Nav.Link>
+                                </LinkContainer>
+                                <LinkContainer to="/tv-shows">
+                                    <Nav.Link href="#">TV Shows</Nav.Link>
+                                </LinkContainer>
                             </Nav>
                             <Nav>
                                 <NavDropdown

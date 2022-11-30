@@ -56,9 +56,6 @@ class Main extends React.Component {
                             {this.state.profile.search.map((searchTerm) => (
                                 <Gallery search={searchTerm} />
                             ))}
-                            {/* <Gallery search="Harry Potter" />
-                            <Gallery search="Lord of the Rings" />
-                            <Gallery search="Star Wars" /> */}
                         </Container>
                         <Footer />
                     </>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Spinner, Carousel, Row, Col, Alert } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
 let key = `98032d8e`;
 
@@ -76,16 +77,25 @@ class Gallery extends React.Component {
                 )}
 
                 {!this.state.isLoading && !this.state.isError && (
-                    <Carousel>
+                    <Carousel indicators={false}>
                         {this.state.movies.map((movies) => (
                             <Carousel.Item>
                                 <div className="movie-row">
                                     <Row>
                                         {movies.map((movie) => (
                                             <Col md={2}>
-                                                <a href="#">
-                                                    <img src={movie.Poster} />
-                                                </a>
+                                                <LinkContainer
+                                                    to={
+                                                        "/movies/" +
+                                                        movie.imdbID
+                                                    }
+                                                >
+                                                    <a href="#">
+                                                        <img
+                                                            src={movie.Poster}
+                                                        />
+                                                    </a>
+                                                </LinkContainer>
                                             </Col>
                                         ))}
                                     </Row>
